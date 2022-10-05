@@ -1,3 +1,34 @@
 body {
     color: #999;
 }
+.box{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding-top: 80px; 
+}
+.container{
+
+  display: grid;
+  width: 266px;
+  grid-template-columns: repeat(4, 60px);
+  gap: 10px;
+  grid-auto-rows: min-content;
+
+}
+
+.cell{
+  display: flex;
+  width: 50px;
+  height: 50px;
+  border: 3px solid red;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.goblin{
+  width: 40px;
+  height: 40px;
+}

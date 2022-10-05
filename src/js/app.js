@@ -1,12 +1,15 @@
 // TODO: write code here
+const arrCells = document.querySelectorAll('.cell');
 
-// comment this to pass build
-// const unusedVariable = 'variable';
+const imgEl = document.createElement('img');
+imgEl.src = 'https://raw.githubusercontent.com/netology-code/ahj-homeworks/master/dom/pic/goblin.png';
+imgEl.alt = 'тут';
+imgEl.classList.add('goblin');
+console.log(arrCells);
+console.log(imgEl);
 
-// for demonstration purpose only
-// export default function demo(value) {
-//   return value;
-// }
-
-// console.log('app.js included');
-// console.log(unusedVariable);
+window.setInterval(() => {
+  const randomIndex = Math.round(Math.random() * (arrCells.length - 1));
+  arrCells[randomIndex].insertBefore(imgEl, null);
+  console.log(randomIndex);
+}, 1000);
