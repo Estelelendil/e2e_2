@@ -1,47 +1,31 @@
-// TODO: write code here
-const arrCells = document.querySelectorAll('.cell');
-const vinContainer = document.querySelector('.vin');
-const loseContainer = document.querySelector('.lose');
-console.log(loseContainer);
-const imgEl = document.createElement('img');
-imgEl.src = 'https://raw.githubusercontent.com/netology-code/ahj-homeworks/master/dom/pic/goblin.png';
-imgEl.alt = 'тут';
-imgEl.classList.add('goblin');
-console.log(arrCells);
-console.log(imgEl);
-let vin = 0;
-let lose = 0;
-vinContainer.textContent = vin;
-loseContainer.textContent = lose;
+const arrCard = document.querySelectorAll('.img');
+const input = document.querySelector('.input');
+const button = document.querySelector('.button');
+const mir = document.querySelector('#mir');
+input.addEventListener('keyup', () => {
+  console.log(arrCard);
+  Array.of(arrCard).map((item) => {
+    item.map((el) => {
+      if (!el.classList.contains('blur')) {
+        console.log('blur!');
+        el.classList.add('blur');
+        return true;
+      }
+      return false;
+    });
+    console.log('kus', item[0]);
+    if (!item.classList.contains('blur')) {
+      console.log('blur!');
+      item.classList.add('blur');
+      return true;
+    }
+    return false;
+  });
+});
 
-window.setInterval(() => {
-  const randomIndex = Math.round(Math.random() * (arrCells.length - 1));
-  arrCells[randomIndex].insertBefore(imgEl, null);
-  // console.log(randomIndex);
-}, 1000);
-
-function catchGoblin() {
-  vin += 1;
-  lose -= 1;
-  vinContainer.textContent = vin;
-  imgEl.remove();
-}
-imgEl.addEventListener('click', catchGoblin);
-
-function dontCatchGoblin() {
-  lose += 1;
-  loseContainer.textContent = lose;
-  if (lose === 5) {
-    alert('GameOver');
-    vin = 0;
-    lose = 0;
-    vinContainer.textContent = vin;
-    loseContainer.textContent = lose;
-  }
-}
-// eslint-disable-next-line no-plusplus
-for (let i = 0; i < arrCells.length; i++) {
-  console.log(arrCells[i]);
-  arrCells[i].addEventListener('click', dontCatchGoblin);
-}
-// arrCells.map((item) => item.addEventListener('click', dontCatchGoblin));
+button.addEventListener('click', () => {
+  if (/^2/.test(input.value)) {
+    mir.classList.remove('blur');
+    console.log('TRUE');
+  } else { console.log('FALSE'); }
+});

@@ -3,16 +3,18 @@ body {
 }
 .box{
   display: flex;
+  flex-direction: column;
   width: 100%;
   justify-content: center;
   align-items: center;
   padding-top: 80px; 
+  gap:10px;
 }
 .container{
 
-  display: grid;
+  display: flex;
+  align-items: center;
   width: 266px;
-  grid-template-columns: repeat(4, 60px);
   gap: 10px;
   grid-auto-rows: min-content;
 
@@ -31,4 +33,32 @@ body {
 .goblin{
   width: 40px;
   height: 40px;
+}
+
+.img{
+  width: 55px;
+  border-radius: 5px;
+}
+
+.blur{
+  background-color: white;
+  width: 55px;
+  opacity: 0.3;
+  filter: blur(1px);
+}
+
+.input{
+  height: 25px;
+  width: 140px;
+  border: 1 solid gray;
+  border-radius: 5px;
+}
+
+.button{
+  /* height: 25px; */
+  /* padding: 5px; */
+  width: 140px;
+  border-radius: 5px;
+  background-color: green;
+  color:white;
 }

@@ -22,17 +22,22 @@ module.exports = {
         use: [
           {
             loader: 'html-loader',
-          },
+          }
         ],
       },
       {
         test: /\.css$/,
         use: [
-          MiniCssExtractPlugin.loader, 'css-loader',
+          MiniCssExtractPlugin.loader, {
+            loader: 'css-loader',
+            options: {
+              import: true
+            }
+          },
         ],
       },
       {
-        test: /\.svg$/,
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
       },
     ],
