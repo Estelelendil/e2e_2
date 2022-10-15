@@ -14,6 +14,7 @@
     "show:coverage": "live-server coverage/lcov-report",
     "preshow:doc": "npm run doc",
     "show:doc": "live-server doc",
+    "e2e":"jest --testPathPattern=./e2e/ --runInBand",
     "preshow:dist": "npm run build",
     "show:dist": "live-server dist"
   },
@@ -40,6 +41,7 @@
   },
   "dependencies": {
     "jest": "^29.1.1",
+    "puppeteer": "^19.0.0",
     "webpack": "^5.74.0"
   }
 }
