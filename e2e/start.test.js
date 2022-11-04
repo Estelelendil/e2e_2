@@ -14,7 +14,7 @@ describe('Page start', () => {
   });
   test('page start', async () => {
     await page.goto('http://localhost:8888');
-    await page.waitFor('body');
+    await page.waitForSelector('body');
   });
   afterAll(async () => {
     await browser.close();
